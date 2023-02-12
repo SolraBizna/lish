@@ -1,0 +1,21 @@
+[package]
+name = "lish"
+version = "0.1.0"
+edition = "2021"
+description = "Liso Shell, very unsophisticated job-oriented shell"
+authors = ["Solra Bizna <solra@bizna.name>"]
+repository = "https://github.com/SolraBizna/lish"
+license = "MIT OR Apache-2.0"
+keywords = ["readline", "command-line", "line-editing"]
+categories = ["command-line-interface"]
+
+[dependencies]
+liso = "0.8"
+shellish_parse = "2.0"
+
+[target.'cfg(unix)'.dependencies]
+nix = {version = "0.25", default-features = false, features=["signal"]}
+
+[features]
+default = []
+no-unix = []
